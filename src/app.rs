@@ -50,16 +50,7 @@ pub fn App() -> impl IntoView {
                 </a>
             </div>
 
-            <p>"Click on the Tauri and Leptos logos to learn more."</p>
-
-            <p>
-                "Recommended IDE setup: "
-                <a href="https://code.visualstudio.com/" target="_blank">"VS Code"</a>
-                " + "
-                <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank">"Tauri"</a>
-                " + "
-                <a href="https://github.com/rust-lang/rust-analyzer" target="_blank">"rust-analyzer"</a>
-            </p>
+            <p>"You owe me all your money!"</p>
 
             <form class="row" on:submit=greet>
                 <input
@@ -72,9 +63,12 @@ pub fn App() -> impl IntoView {
 
             <p><b>{ move || greet_msg.get() }</b></p>
 
-            <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/3T1c7GkzRQQ">
-            </iframe>
+            <p
+                align="center">
+                <iframe width="420" height="315"
+                    src="https://www.mp4upload.com/embed-z9tqc4k3p2lr.html?t=4xjQAPwnBFAKxQ%3D%3D&autostart=true">
+                </iframe>
+            </p>
 
         </main>
     }
