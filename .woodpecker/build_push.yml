@@ -1,6 +1,6 @@
 when:
-  event: push
-  branch: main
+  event: tag
+  ref: refs/tags/v*
 
 steps:
   build:
@@ -11,12 +11,13 @@ steps:
       - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
       - rustup toolchain install nightly
       - rustup target add wasm32-unknown-unknown x86_64-pc-windows-msvc
-      - cargo install trunk tauri-cli
+      - cargo install trunk tauri-cli xwin
+      - echo "yes" | xwin splat --output .xwin
       - cargo tauri build
-      - ls target/release/bundle/deb
-      - ls target/release/bundle/appimage
       - mv target/release/bundle/deb/fabseapp_0.0.0_amd64.deb fabseapp_0.0.0_amd64.deb
       - mv target/release/bundle/appimage/fabseapp_0.0.0_amd64.AppImage fabseapp_0.0.0_amd64.AppImage
+      - cargo tauri build --target x86_64-pc-windows-msvc
+      - ls target/x86_64-pc-windows-msvc/release/bundle/nsis
 
   release:
     image: woodpeckerci/plugin-gitea-release
