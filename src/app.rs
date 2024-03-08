@@ -34,7 +34,6 @@ pub fn App() -> impl IntoView {
             }
 
             let args = to_value(&GreetArgs { name: &name }).unwrap();
-            // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
             let new_msg = invoke("greet", args).await.as_string().unwrap();
             set_greet_msg.set(new_msg);
         });
@@ -72,6 +71,11 @@ pub fn App() -> impl IntoView {
             </form>
 
             <p><b>{ move || greet_msg.get() }</b></p>
+
+            <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/3T1c7GkzRQQ">
+            </iframe>
+
         </main>
     }
 }
