@@ -11,6 +11,7 @@ steps:
       - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
       - export PATH="$HOME/.cargo/bin:$PATH"
       - rustup toolchain install nightly
+      - rustup default nightly
       - rustup target add wasm32-unknown-unknown x86_64-pc-windows-msvc
       - cargo install trunk tauri-cli xwin
       - echo "yes" | xwin splat --output .xwin
