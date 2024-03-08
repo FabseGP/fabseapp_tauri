@@ -11,8 +11,7 @@ steps:
       - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
       - rustup toolchain install nightly
       - rustup target add wasm32-unknown-unknown x86_64-pc-windows-msvc
-      - cargo install trunk tauri-cli xwin
-      - echo "yes" | xwin splat --output ~/.xwin --disable-symlinks
+      - cargo install trunk tauri-cli
       - cargo tauri build
       - ls target/release/bundle/deb
       - ls target/release/bundle/appimage
