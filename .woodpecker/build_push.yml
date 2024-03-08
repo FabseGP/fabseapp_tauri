@@ -4,10 +4,11 @@ when:
 
 steps:
   build:
-    image: rust:latest
+    image: debian:latest
     commands:
       - apt-get update
-      - apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev rustup build-essential curl wget file libssl-dev
+      - apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev build-essential curl wget file libssl-dev
+      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
       - rustup toolchain install nightly
       - rustup target add wasm32-unknown-unknown
       - cargo install trunk tauri-cli
