@@ -1,6 +1,6 @@
 when:
-  event: tag
-  ref: refs/tags/v*
+  event: push
+  branch: main
 
 steps:
   build:
