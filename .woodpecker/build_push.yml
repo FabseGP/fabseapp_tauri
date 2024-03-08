@@ -8,15 +8,16 @@ steps:
     commands:
       - apt-get update
       - apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev build-essential curl wget file libssl-dev nsis llvm lld
-      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -- -y
       - rustup toolchain install nightly
       - rustup target add wasm32-unknown-unknown x86_64-pc-windows-msvc
       - cargo install trunk tauri-cli xwin
       - xwin splat --output ~/.xwin
       - cargo tauri build
+      - ls target/release/bundle/deb
+      - ls target/release/bundle/appimage
       - mv target/release/bundle/deb/fabseapp_0.0.0_amd64.deb fabseapp_0.0.0_amd64.deb
       - mv target/release/bundle/appimage/fabseapp_0.0.0_amd64.AppImage fabseapp_0.0.0_amd64.AppImage
-      - cargo tauri build --target x86_64-pc-windows-msvc
 
   release:
     image: woodpeckerci/plugin-gitea-release
