@@ -16,10 +16,10 @@ steps:
       - cargo install trunk tauri-cli xwin
       - echo "yes" | xwin splat --output .xwin
       - cargo tauri build
-      - mv target/release/bundle/deb/fabseapp_0.0.0_amd64.deb fabseapp_${CI_COMMIT_TAG}_amd64.deb
-      - mv target/release/bundle/appimage/fabseapp_0.0.0_amd64.AppImage fabseapp_${CI_COMMIT_TAG}_amd64.AppImage
+      - mv target/release/bundle/deb/fabseapp_0.0.1_amd64.deb fabseapp_${CI_COMMIT_TAG}_amd64.deb
+      - mv target/release/bundle/appimage/fabseapp_0.0.1_amd64.AppImage fabseapp_${CI_COMMIT_TAG}_amd64.AppImage
       - cargo tauri build --target x86_64-pc-windows-msvc
-      - mv target/x86_64-pc-windows-msvc/release/bundle/nsis/fabseapp_0.0.0_x64-setup.exe fabseapp_${CI_COMMIT_TAG}_x64-setup.exe
+      - mv target/x86_64-pc-windows-msvc/release/bundle/nsis/fabseapp_0.0.1_x64-setup.exe fabseapp_${CI_COMMIT_TAG}_x64-setup.exe
 
   release:
     image: woodpeckerci/plugin-gitea-release
