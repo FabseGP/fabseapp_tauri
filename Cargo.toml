@@ -1,21 +1,18 @@
 [package]
-name = "fabseapp-ui"
+name = "fabseapp_tauri"
 version = "0.0.1"
 edition = "2021"
 
 [dependencies]
-leptos = { version = "0", features = ["csr"] }
-wasm-bindgen = { version = "0", features = ["serde-serialize"] }
-wasm-bindgen-futures = "0"
 js-sys = "0"
+leptos = { version = "0", features = ["csr"] }
 serde = { version = "1", features = ["derive"] }
 serde-wasm-bindgen = "0"
-
-[workspace]
-members = ["src-tauri"]
+wasm-bindgen = { version = "0", features = ["serde-serialize"] }
+wasm-bindgen-futures = "0"
 
 [profile.release]
-panic = "abort"
 codegen-units = 1
 lto = "thin"
+panic = "abort"
 strip = true

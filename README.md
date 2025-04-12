@@ -1,4 +1,4 @@
-# Fabseman Inc. universal app
+# Fabseman Inc. universal app (tauri)
 
 Very much WIP, but here lies the start of the finest, universal app ever created since the days of paint (obv the og-version), compiled using the best programming language (rust) and tauri
 

@@ -41,12 +41,12 @@ pub fn App() -> impl IntoView {
 
     view! {
         <main class="container">
+
+            <h1>Welcome to Fabseapp (WIP)</h1>
+
             <div class="row">
-                <a href="https://tauri.app" target="_blank">
-                    <img src="public/tauri.svg" class="logo tauri" alt="Tauri logo"/>
-                </a>
-                <a href="https://docs.rs/leptos/" target="_blank">
-                    <img src="public/leptos.svg" class="logo leptos" alt="Leptos logo"/>
+                <a href="https://youtu.be/vqeZqlAQKUc" target="_blank">
+                    <img src="public/welcome.avif"/>
                 </a>
             </div>
 
@@ -62,13 +62,6 @@ pub fn App() -> impl IntoView {
             </form>
 
             <p><b>{ move || greet_msg.get() }</b></p>
-
-            <p
-                align="center">
-                <iframe width="420" height="315"
-                    src="https://www.mp4upload.com/embed-z9tqc4k3p2lr.html?t=4xjQAPwnBFAKxQ%3D%3D&autostart=true">
-                </iframe>
-            </p>
 
         </main>
     }
